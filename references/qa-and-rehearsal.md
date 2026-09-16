@@ -24,6 +24,8 @@ You are looking for two kinds of findings:
 
 This works because you, having written everything, can no longer see the talk with fresh eyes. The blind reviewer can.
 
+**If no subagent mechanism is available** in the environment you're running in, don't skip the fresh-eyes check — degrade it gracefully: ask the user (or a colleague) to flip through the deck, or do a self-review after a real break using a fixed checklist (What is this talk about? Where does the logic jump? Which page would I cut? What question would I ask?). A degraded blind review still catches the logic jumps; what it can't catch is your own blind spots — say so when you report.
+
 ## Page-turn markers: aligning the script to the deck
 
 The speaker holds the script and drives the slides; the script must tell them when to advance. Once the deck's page numbering is final, annotate the script:
@@ -44,7 +46,10 @@ For a printed script to read from at the podium, generate a PDF from the script 
 - **Headings small.** Block headings ("第 11–12 页 · 发现一：成交价格上升 | 约 2 分钟") are wayfinding, not content — normal size, bold. Large headings waste the speaker's glance on navigation.
 - **Slide-verbatim paragraphs wrapped in full-width parentheses, one size smaller.** Paragraphs that appear word-for-word on a slide (the figure pages' side text) will be read off the *screen*, so the paper copy is only a backup. Mark them with （…） and set them one size smaller than body. Do this with parentheses plus size, not a color — the script will be printed black-and-white, and a "dark blue" annotation is a gray smudge on a department printer. Mark these paragraphs in the Markdown with a `:::verbatim` fence (or pass their opening words via `--dup-keys-file`); the script does the rest.
 - **Turn cues in gray bold**, spaced as described above.
+- **Source notes in gray, two sizes down.** `> 来源：…` lines are for fact-checking and Q&A prep, not for reading aloud — footnote-size gray keeps them findable without competing with the spoken text.
 - Regenerate from the Markdown after every script edit — never hand-edit the PDF's source. One command, always in sync.
+
+**When you hand over the print PDF, explain the two markup conventions in one sentence.** Users who didn't build the file won't guess them: "（…）括号小字 = 这部分 PPT 上有，照屏幕念；灰色小字 = 来源注记，备查不用念。" A legend the user never received is a bug, not a feature.
 
 ## Rehearsal note
 

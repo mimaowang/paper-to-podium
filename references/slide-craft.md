@@ -38,23 +38,36 @@ Why this works so well: while the audience studies the figure, the speaker reads
 
 ## Figures
 
-- **Paper figures**: screenshot or extract at high resolution (render the PDF page at 300dpi and crop). Choose figures with visual content — maps, event-study plots, density shifts, mechanism diagrams. Never screenshot a regression table; if a table result matters, restate it as one sentence with its number.
+**Which figures to take: the skill is to *identify* the paper's 2–4 most important visual results, not to find *a* figure.** A deck built from this workflow typically ends up with too few figures if you only grab what's convenient. Before writing any slide, go through the paper's figures and tables once and rank them by how much of the argument each one carries:
+
+1. **First priority: the paper's visual core** — the figures a referee would ask about: event-study / dynamic-effect plots, maps of the key variation, density or distribution shifts, mechanism diagrams, reduced-form discontinuities. In empirical economics papers there are usually two to four of these, and they are the slides' figure pages.
+2. **Worth taking if time allows**: descriptive maps or trend charts that make the setting concrete (these often live in the *appendix* — check it; appendix figures are frequently more presentation-friendly than main-text coefficient plots).
+3. **Never**: regression tables as screenshots. If a table result matters, restate it as one sentence with its number. A dense table on screen is a wall of text with extra steps.
+
+Minor figures and tables that don't carry the argument stay out — the goal is coverage of what matters, not completeness.
+
+Then extract at high resolution and crop tightly:
+
+- **Paper figures**: render the PDF page at 300dpi and crop. Example (poppler): `pdftoppm -png -r 300 -f 7 -l 7 paper.pdf fig` renders page 7, then crop with `pdftoppm`'s `-x -y -W -H` flags (crop-box coordinates in pixels at the given dpi) or any image tool. Screenshotting at screen resolution produces blurry axis labels — don't.
 - **External figures**: official statistical charts, reputable outlets. No watermarks, no blurry screenshots, no decorative stock photos, and no screenshots of policy documents (a page of red-header PDF is the visual equivalent of a wall of text). If the user requests a specific image — a particular film still, a particular photo — find exactly that one, not a substitute.
 - Every figure needs a one-line caption saying what it is and where it's from (`\srcnote`).
 
 ## Templates
 
-If the user has an institutional template, use it. Otherwise check GitHub for a Beamer theme for their institution (many Chinese universities have community themes; search "Beamer <university>" and prefer ones with more stars and recent fixes), or start from `assets/beamer-skeleton.tex`. Whichever you use:
+If the user has an institutional template, use it. Otherwise:
 
-1. **Compile the pristine template first**, before writing any content, and view the output. Template/fonts/compilation problems are ten times cheaper to find now.
-2. Customize the identity fields (name, institute, date) and remove title-page elements meant for other occasions (e.g. "开题报告" banners on thesis templates).
-3. Keep a cleaned copy somewhere permanent — after one talk, the user owns a proven template, and the next talk starts from it.
+1. **Default to the bundled skeleton** (`assets/beamer-skeleton.tex`). It uses **Metropolis** (github.com/matze/mtheme, ~7k stars — the most-starred general Beamer theme, and the reference for "minimal and professional"), which ships with every full TeX Live / MiKTeX as `beamertheme-metropolis`, so there is nothing to install. If the user wants something else, GitHub themes for their institution ("Beamer <university>", prefer more stars and recent fixes) are the next stop.
+2. **For CJK decks, uncomment the skeleton's CJK block** — it is tested and known-good. Two traps it exists to prevent, both discovered the hard way on MiKTeX: ctex's default fontset demands fonts that fail to load, and `newtxtext` loaded before ctex poisons CJK font lookup. Both failure modes produce a PDF that **compiles with exit code 0 but shows empty boxes instead of Chinese**.
+3. **Compile the pristine skeleton first and LOOK at the glyphs.** Because of the above, "xelatex exited cleanly" proves nothing — render page 1 and confirm the characters are actually there before writing any content. Missing-glyph checks are part of the visual QA loop below, not an afterthought.
+4. Customize the identity fields (name, institute, date) and remove title-page elements meant for other occasions (e.g. "开题报告" banners on thesis templates).
+5. Keep a cleaned copy somewhere permanent — after one talk, the user owns a proven template, and the next talk starts from it.
 
 ## The visual QA loop
 
 After every meaningful edit: compile (XeLaTeX for CJK decks), render pages to PNGs (`scripts/render_pdf_pages.sh`), and *look at every page*. What to check for:
 
 - text overflowing the frame or running into the theme's header/footer bars;
+- **missing glyphs** — empty boxes (tofu) where characters should be, especially CJK; xelatex exits 0 while dropping glyphs, so this is a *looking* check, not a log check;
 - figures touching decorative elements, or scaled so small their axis text is unreadable;
 - alignment within a page (e.g. three dates in a timeline that don't line up — a real piece of user feedback; misalignment "looks uncomfortable" even when users can't name why);
 - orphaned pages with two words on them, and crowded pages that should split;

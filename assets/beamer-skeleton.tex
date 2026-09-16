@@ -1,27 +1,44 @@
 % !TEX program = xelatex
-% Paper-talk Beamer skeleton — 16:9, back-row-readable defaults.
-% Works for English decks out of the box; for Chinese decks uncomment the
-% ctex block. Compile with XeLaTeX.
-\documentclass[aspectratio=169,12pt]{beamer}
-
-% ---- theme: pick one sober theme; replace with your institutional one ----
-\usetheme{Madrid}
-\usecolortheme{seahorse}
-\setbeamertemplate{navigation symbols}{}   % navigation icons are noise
-\setbeamertemplate{footline}[frame number]
-
-% ---- fonts: Latin/numbers in Times; CJK (if any) in a hei-style face ----
-\usepackage{newtxtext}
-% \usepackage{ctex}
-% \setCJKmainfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
-% \setCJKsansfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
-
+% ============================================================
+% paper-to-podium Beamer skeleton
+% Theme: Metropolis (matze/mtheme, ~7k stars on GitHub) — minimal,
+% back-row-readable, and shipped with every full TeX Live / MiKTeX
+% as "beamertheme-metropolis", so there is nothing to install manually.
+% Metropolis is (c) Matthias Vogelgesang, LPPL — if you redistribute
+% modified decks under its name, see the theme's own license notes.
+%
+% Compile with XeLaTeX. BEFORE writing content, compile this file
+% unchanged and LOOK at the output: xelatex can exit 0 while silently
+% dropping CJK glyphs, so "it compiles" is not enough — check that the
+% characters actually rendered.
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{metropolis}
 \usepackage{graphicx,booktabs}
 
-% ---- two small helpers every deck ends up wanting ----
-% \hl      highlight the one number that matters, in the theme color
+% ---------- Latin fonts ----------
+% Times for body text keeps numbers looking professional. Do NOT load
+% newtxtext/newtxmath here: loading them BEFORE ctex breaks later CJK
+% font lookup with "Transform components aren't all known" errors.
+\setmainfont{Times New Roman}
+
+% ---------- CJK decks: UNCOMMENT the whole block below ----------
+% Verified on MiKTeX + Windows. The critical pieces are:
+%   * fontset=none — ctex's default fontset demands SimSun/Fandol fonts
+%     that many MiKTeX installs cannot load, producing a deck that
+%     compiles fine but shows empty boxes instead of Chinese;
+%   * explicit \setCJKmainfont afterwards.
+% \usepackage[fontset=none]{ctex}
+% \setCJKmainfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
+% \setCJKsansfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
+% (On macOS use "PingFang SC" / "PingFang SC Semibold"; on Linux use
+% "Noto Sans CJK SC". Keep BoldFont set — frame titles are bold.)
+% ----------------------------------------------------------------
+
+% ---------- two helpers every deck ends up wanting ----------
+% \hl      highlight the one number that matters, in the theme accent
 % \srcnote tiny gray source line under figures/tables
-\newcommand{\hl}[1]{{\color{structure.fg}\bfseries #1}}
+\newcommand{\hl}[1]{\alert{\textbf{#1}}}
 \newcommand{\srcnote}[1]{{\tiny\color{gray} #1}}
 
 \title[Short Title]{Full Title of the Talk}
@@ -32,9 +49,7 @@
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 
 \begin{frame}{Outline}
   \tableofcontents
@@ -76,5 +91,9 @@
 
 \section{Results}
 % ...
+
+\begin{frame}[standout]
+  Thank you!
+\end{frame}
 
 \end{document}

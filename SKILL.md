@@ -37,7 +37,7 @@ Bundled scripts (use them instead of reinventing):
 - `scripts/script_to_print_pdf.py <file.md> --title "..." [--compile]` — converts the page-marker-annotated script (Markdown) into a print-ready PDF via XeLaTeX: small headings, comfortable body text, page-turn cues in gray, and paragraphs that appear verbatim on the slides wrapped in full-width parentheses and set one size smaller — the speaker reads those off the screen, so the paper copy is only a backup, and parentheses plus a size difference (unlike a color) survive black-and-white printing.
 - `scripts/render_pdf_pages.sh <file.pdf> [dpi]` — renders every PDF page to a PNG for the visual QA loop.
 
-`assets/beamer-skeleton.tex` is a clean 16:9 Beamer starting point with the typography defaults this workflow converged on (large body text, highlight command, source-note command, an example content page and an example figure page). Use it when the user has no institutional template; when they do, prefer theirs.
+`assets/beamer-skeleton.tex` is a 16:9 Beamer starting point built on Metropolis (the most-starred general Beamer theme, shipped with TeX Live/MiKTeX), with a tested CJK block, the typography defaults this workflow converged on, and an example of each page pattern. Use it when the user has no institutional template; when they do, prefer theirs.
 
 ## Phase 0 — Intake
 
@@ -65,7 +65,7 @@ Read the three reference files as you reach each phase. Two habits cut across al
 ## What "done" looks like
 
 - A script whose spoken length, at the speaker's actual pace, lands inside the time budget with margin for questions.
-- Slides where every page passes a visual check: readable from the back, one idea per page, no orphaned two-word pages, no walls of text.
+- Slides where every page passes a visual check: readable from the back, one idea per page, no orphaned two-word pages, no walls of text, and the paper's 2–4 argument-carrying figures are on figure pages (see `references/slide-craft.md` on identifying them).
 - A fact-check that found no material errors, with sources on file for the numbers.
 - A blind reviewer (fresh context, saw only the slides) who could follow the talk's logic without the paper.
 - A print-ready script with page-turn cues matching the final deck's page numbers, and slide-verbatim paragraphs visibly marked.

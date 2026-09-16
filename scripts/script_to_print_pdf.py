@@ -136,8 +136,8 @@ def main() -> int:
 % slide-verbatim paragraph: wrapped in full-width parentheses, one size smaller
 % (read off the screen; B/W-print safe — no color needed)
 \newcommand{\pptdup}[1]{{\small （#1）}\par}
-% source note line
-\newcommand{\srcline}[1]{{\small\color{flipgray} #1}\par}
+% source note line: two sizes smaller — on file for Q&A, not read aloud
+\newcommand{\srcline}[1]{{\footnotesize\color{flipgray} #1}\par}
 \title{\vspace{-1.5cm}{\Large\bfseries __TITLE__}\vspace{-0.5em}}
 \date{}
 \begin{document}
