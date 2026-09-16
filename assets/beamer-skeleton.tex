@@ -1,0 +1,80 @@
+% !TEX program = xelatex
+% Paper-talk Beamer skeleton — 16:9, back-row-readable defaults.
+% Works for English decks out of the box; for Chinese decks uncomment the
+% ctex block. Compile with XeLaTeX.
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% ---- theme: pick one sober theme; replace with your institutional one ----
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}   % navigation icons are noise
+\setbeamertemplate{footline}[frame number]
+
+% ---- fonts: Latin/numbers in Times; CJK (if any) in a hei-style face ----
+\usepackage{newtxtext}
+% \usepackage{ctex}
+% \setCJKmainfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
+% \setCJKsansfont[BoldFont={Microsoft YaHei Bold}]{Microsoft YaHei}
+
+\usepackage{graphicx,booktabs}
+
+% ---- two small helpers every deck ends up wanting ----
+% \hl      highlight the one number that matters, in the theme color
+% \srcnote tiny gray source line under figures/tables
+\newcommand{\hl}[1]{{\color{structure.fg}\bfseries #1}}
+\newcommand{\srcnote}[1]{{\tiny\color{gray} #1}}
+
+\title[Short Title]{Full Title of the Talk}
+\subtitle{A Paper Presentation}
+\author[Author]{Author Name}
+\institute[Institute Short]{Institute Full Name}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Background}
+
+% ---- pattern 1: content page — the load-bearing sentences, full width ----
+\begin{frame}{One Idea Per Page}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item The single most important sentence from this stretch of the script,
+          with its key number \hl{highlighted}.
+    \item At most five or six short items. If you need more, this is two pages.
+    \item Enough substance that the speaker can glance at the screen and
+          remember what comes next — the deck is the speaker's prompter too.
+  \end{itemize}
+  \vfill
+  \srcnote{Source: where the numbers on this page come from.}
+\end{frame}
+
+% ---- pattern 2: figure page — big figure + secondary script text beside ----
+% The figure is what the audience studies; the side text is what the speaker
+% reads aloud meanwhile (mark it :::verbatim in the script).
+\begin{frame}{Figure Page}
+  \begin{columns}[T]
+    \column{0.42\textwidth}
+      {\small Secondary material: context and caveats that didn't make the
+       key-points cut. Smaller font is fine here — it is the speaker's text,
+       shown on screen while the audience looks at the figure.\par}
+    \column{0.55\textwidth}
+      \centering
+      % \includegraphics[width=\linewidth]{figure}
+      \fbox{\parbox[c][0.55\textheight][c]{0.9\linewidth}{\centering figure}}
+      \\[2pt]
+      \srcnote{What the figure shows, and where it is from.}
+  \end{columns}
+\end{frame}
+
+\section{Results}
+% ...
+
+\end{document}

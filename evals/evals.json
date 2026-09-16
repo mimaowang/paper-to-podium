@@ -1,0 +1,23 @@
+{
+  "skill_name": "paper-to-podium",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我下周要在《土地经济学》课上汇报一篇论文（Regional Science and Urban Economics 上的一篇，PDF 在桌面上），30 分钟含提问，我说话偏慢。老师还要求联系中国现实、最后带一句自己的课程论文选题。帮我从头准备：讲稿 + slides。",
+      "expected_output": "Runs intake (duration/pace/extras), reads the paper, researches institutional background with traceable sources, writes a ~5000-character plain-language Chinese script with a length estimate, then builds slides extracted from the script with a visual QA loop.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I have a 12-minute slot at a conference next month to present my own working paper (pdf attached). I need slides and speaker notes. The audience is applied micro economists.",
+      "expected_output": "Calibrates rigor for specialists (identification strategy gets real time), writes a ~1400-word English script first, distills a Beamer deck from it, renders and inspects every page, aligns speaker notes to slide pages.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Help me turn this paper into a 20-minute journal club presentation. Mostly PhD students in the room, keep it informal but accurate, and I want figures from the paper in the deck.",
+      "expected_output": "Script-first workflow; extracts presentation-worthy paper figures at high resolution (no regression-table screenshots); uses the key-points page / figure page split; ends with fact-check and blind-audience review.",
+      "files": []
+    }
+  ]
+}
