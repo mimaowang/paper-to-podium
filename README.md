@@ -56,7 +56,7 @@ Each phase has a dedicated reference file with the reasoning and the failure mod
 | `scripts/estimate_talk_length.py` | Script → minutes at standard speaking rates (Chinese & English). Run after every substantial edit. |
 | `scripts/script_to_print_pdf.py` | Script Markdown → print-ready PDF via XeLaTeX: turn cues, small headings, slide-verbatim paragraphs in parentheses at a smaller size. |
 | `scripts/render_pdf_pages.sh` | Render every PDF page to PNGs for the visual QA loop. |
-| `assets/beamer-skeleton.tex` | 16:9 Beamer starting deck on the Metropolis theme (~7k stars, ships with TeX Live/MiKTeX), with a tested CJK block and both page patterns. |
+| `assets/beamer-skeleton.tex` + `assets/simpleplus/` | 16:9 Beamer starting deck on the SimplePlus theme (dark-blue academic, ~280 stars; theme files bundled, public domain), with a tested CJK block and both page patterns. |
 
 ## Repository layout
 
@@ -84,7 +84,7 @@ Distilled from a real end-to-end project: a 30-minute Chinese course presentatio
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The skeleton uses the Metropolis theme (© Matthias Vogelgesang, LPPL, loaded as a system package); institutional themes you fetch from GitHub carry their own licenses.
+MIT — see [LICENSE](LICENSE). The skeleton builds on SimplePlus (© Pin-Yen Huang, Unlicense/public domain, bundled in assets/simpleplus/); institutional themes you fetch from GitHub carry their own licenses.
 
 ---
 
@@ -146,7 +146,7 @@ Agent（和人）的本能是先做 PPT，结果是密密麻麻的要点页：�
 | `scripts/estimate_talk_length.py` | 讲稿字数 → 分钟数（中英文语速档位）。每次大改后跑一遍。 |
 | `scripts/script_to_print_pdf.py` | 讲稿 md → 打印版 PDF（XeLaTeX）：翻页提示、小标题、重复段落加括号并小一号。 |
 | `scripts/render_pdf_pages.sh` | 把 slides 每页渲染成 PNG，供逐页视觉检查。 |
-| `assets/beamer-skeleton.tex` | 16:9 Beamer 骨架，基于 Metropolis 主题（约 7k stars，TeX Live/MiKTeX 自带），内置实测可用的中文配置和两种页面模式。 |
+| `assets/beamer-skeleton.tex` + `assets/simpleplus/` | 16:9 Beamer 骨架，基于 SimplePlus 深蓝学术主题（约 280 星，主题文件已内置，公有领域），内置实测可用的中文配置和两种页面模式。 |
 
 ## 目录结构
 
@@ -174,4 +174,4 @@ paper-to-podium/
 
 ## 许可证
 
-MIT，见 [LICENSE](LICENSE)。骨架基于 Metropolis 主题（© Matthias Vogelgesang，LPPL，以系统宏包方式调用）；你从 GitHub 自取的院校模板遵循其各自的许可证。
+MIT，见 [LICENSE](LICENSE)。骨架基于 SimplePlus 主题（© Pin-Yen Huang，Unlicense/公有领域，已内置于 assets/simpleplus/）；你从 GitHub 自取的院校模板遵循其各自的许可证。

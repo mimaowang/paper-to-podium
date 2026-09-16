@@ -1,11 +1,11 @@
 % !TEX program = xelatex
 % ============================================================
 % paper-to-podium Beamer skeleton
-% Theme: Metropolis (matze/mtheme, ~7k stars on GitHub) — minimal,
-% back-row-readable, and shipped with every full TeX Live / MiKTeX
-% as "beamertheme-metropolis", so there is nothing to install manually.
-% Metropolis is (c) Matthias Vogelgesang, LPPL — if you redistribute
-% modified decks under its name, see the theme's own license notes.
+% Theme: SimplePlus (pm25/SimplePlus-BeamerTheme, ~280 stars on
+% GitHub) — a sober dark-blue academic theme. It is NOT on CTAN,
+% so the four .sty files are bundled in assets/simpleplus/ (public
+% domain / Unlicense, (c) Pin-Yen Huang); keep that folder next to
+% this file when you copy the skeleton into a project.
 %
 % Compile with XeLaTeX. BEFORE writing content, compile this file
 % unchanged and LOOK at the output: xelatex can exit 0 while silently
@@ -13,13 +13,16 @@
 % characters actually rendered.
 % ============================================================
 \documentclass[aspectratio=169,11pt]{beamer}
-\usetheme{metropolis}
+\usetheme{SimplePlus}
 \usepackage{graphicx,booktabs}
 
 % ---------- Latin fonts ----------
-% Times for body text keeps numbers looking professional. Do NOT load
+% Times for body text keeps numbers looking professional. fontspec must be
+% loaded explicitly — without it, \setmainfont is undefined and its argument
+% gets typeset as stray text at the top of the title page. Do NOT load
 % newtxtext/newtxmath here: loading them BEFORE ctex breaks later CJK
 % font lookup with "Transform components aren't all known" errors.
+\usepackage{fontspec}
 \setmainfont{Times New Roman}
 
 % ---------- CJK decks: UNCOMMENT the whole block below ----------
@@ -36,9 +39,9 @@
 % ----------------------------------------------------------------
 
 % ---------- two helpers every deck ends up wanting ----------
-% \hl      highlight the one number that matters, in the theme accent
+% \hl      highlight the one number that matters, in the theme blue
 % \srcnote tiny gray source line under figures/tables
-\newcommand{\hl}[1]{\alert{\textbf{#1}}}
+\newcommand{\hl}[1]{{\color{MediumBlue}\bfseries #1}}
 \newcommand{\srcnote}[1]{{\tiny\color{gray} #1}}
 
 \title[Short Title]{Full Title of the Talk}
@@ -92,8 +95,8 @@
 \section{Results}
 % ...
 
-\begin{frame}[standout]
-  Thank you!
+\begin{frame}{Thank You}
+  \centering\Large Thank you!
 \end{frame}
 
 \end{document}

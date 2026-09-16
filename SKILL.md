@@ -37,7 +37,7 @@ Bundled scripts (use them instead of reinventing):
 - `scripts/script_to_print_pdf.py <file.md> --title "..." [--compile]` — converts the page-marker-annotated script (Markdown) into a print-ready PDF via XeLaTeX: small headings, comfortable body text, page-turn cues in gray, and paragraphs that appear verbatim on the slides wrapped in full-width parentheses and set one size smaller — the speaker reads those off the screen, so the paper copy is only a backup, and parentheses plus a size difference (unlike a color) survive black-and-white printing.
 - `scripts/render_pdf_pages.sh <file.pdf> [dpi]` — renders every PDF page to a PNG for the visual QA loop.
 
-`assets/beamer-skeleton.tex` is a 16:9 Beamer starting point built on Metropolis (the most-starred general Beamer theme, shipped with TeX Live/MiKTeX), with a tested CJK block, the typography defaults this workflow converged on, and an example of each page pattern. Use it when the user has no institutional template; when they do, prefer theirs.
+`assets/beamer-skeleton.tex` is a 16:9 Beamer starting point built on **SimplePlus** (pm25/SimplePlus-BeamerTheme, ~280 stars) — a sober dark-blue academic theme. It is not on CTAN, so its four `.sty` files are bundled in `assets/simpleplus/` (public domain / Unlicense); copy them along with the skeleton. The skeleton has a tested CJK block, the typography defaults this workflow converged on, and an example of each page pattern. Use it when the user has no institutional template; when they do, prefer theirs.
 
 ## Phase 0 — Intake
 
