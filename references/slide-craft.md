@@ -62,6 +62,10 @@ If the user has an institutional template, use it. Otherwise:
 4. Customize the identity fields (name, institute, date) and remove title-page elements meant for other occasions (e.g. "开题报告" banners on thesis templates).
 5. Keep a cleaned copy somewhere permanent — after one talk, the user owns a proven template, and the next talk starts from it.
 
+## The closing slide
+
+"谢谢大家，欢迎批评指正！" / "Thank you — questions welcome" gets **its own final frame**, never shares the summary page. The summary page is content; the closing page is the speaker's cue to stop talking and invite questions — merging them means the "any questions?" moment happens over a wall of bullet points. One line, centered, nothing else on the page.
+
 ## The visual QA loop
 
 After every meaningful edit: compile (XeLaTeX for CJK decks), render pages to PNGs (`scripts/render_pdf_pages.sh`), and *look at every page*. What to check for:
@@ -71,6 +75,7 @@ After every meaningful edit: compile (XeLaTeX for CJK decks), render pages to PN
 - figures touching decorative elements, or scaled so small their axis text is unreadable;
 - alignment within a page (e.g. three dates in a timeline that don't line up — a real piece of user feedback; misalignment "looks uncomfortable" even when users can't name why);
 - orphaned pages with two words on them, and crowded pages that should split;
+- **density balance** — neither extreme survives a projector: text crammed to the frame edges is unreadable, but a page with one lonely bullet in a sea of white looks like a mistake. Sparse content pages should pull material up from the next page (or merge); crowded ones should split. Judge by looking, not by counting lines;
 - font-size hierarchy: titles, body, and secondary text should each be consistent across pages.
 
 Fix what you see, re-render, look again. When reporting to the user, mention what you checked — "I looked at all 23 pages" is a meaningful claim; "it compiles" is not.
