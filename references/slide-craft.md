@@ -38,11 +38,11 @@ Why this works so well: while the audience studies the figure, the speaker reads
 
 ## Figures
 
-**Which figures to take: the skill is to *identify* the paper's 2–4 most important visual results, not to find *a* figure.** A deck built from this workflow typically ends up with too few figures if you only grab what's convenient. Before writing any slide, go through the paper's figures and tables once and rank them by how much of the argument each one carries:
+**Which figures to take: identify the paper's 2–4 figures that carry the argument — whatever form they take in this field.** A deck built from this workflow typically ends up with too few figures if you only grab what's convenient. Before writing any slide, go through the paper's figures and tables once and rank each by one test: *if the audience never saw this figure, would the argument still land?*
 
-1. **First priority: the paper's visual core** — the figures a referee would ask about: event-study / dynamic-effect plots, maps of the key variation, density or distribution shifts, mechanism diagrams, reduced-form discontinuities. In empirical economics papers there are usually two to four of these, and they are the slides' figure pages.
-2. **Worth taking if time allows**: descriptive maps or trend charts that make the setting concrete (these often live in the *appendix* — check it; appendix figures are frequently more presentation-friendly than main-text coefficient plots).
-3. **Never**: regression tables as screenshots. If a table result matters, restate it as one sentence with its number. A dense table on screen is a wall of text with extra steps.
+1. **First priority: the paper's visual core** — the figures a referee or examiner would ask about. What these look like depends on the field: in empirical economics, event-study plots, maps of the key variation, density shifts, mechanism diagrams, discontinuity plots; in ML/CS, architecture diagrams, benchmark curves, qualitative examples; in the natural sciences, key images, spectra, structures, phylogenies; in the humanities, the objects themselves — manuscripts, maps, artifacts. Most papers have two to four of these, and they become the slides' figure pages.
+2. **Worth taking if time allows**: whatever makes the setting concrete — descriptive maps, trend charts, context photos. These often live in the *appendix* — always check it; appendix figures are frequently more presentation-friendly than the main-text ones.
+3. **Never**: dense tables as screenshots, in any field. If a table result matters, restate it as one sentence with its number. A table on screen is a wall of text with extra steps.
 
 Minor figures and tables that don't carry the argument stay out — the goal is coverage of what matters, not completeness.
 

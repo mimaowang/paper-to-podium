@@ -39,6 +39,20 @@ Bundled scripts (use them instead of reinventing):
 
 `assets/beamer-skeleton.tex` is a 16:9 Beamer starting point built on **SimplePlus** (pm25/SimplePlus-BeamerTheme, ~280 stars) — a sober dark-blue academic theme. It is not on CTAN, so its four `.sty` files are bundled in `assets/simpleplus/` (public domain / Unlicense); copy them along with the skeleton. The skeleton has a tested CJK block, the typography defaults this workflow converged on, and an example of each page pattern. Use it when the user has no institutional template; when they do, prefer theirs.
 
+## Environment check — run once, before compiling anything
+
+The workflow needs three tools: `xelatex` (with ctex), `pdftoppm` (poppler), and `python3`. Check early with `which xelatex pdftoppm python` (or `where` on Windows cmd) — discovering a missing tool after the script is written wastes the whole pipeline.
+
+**If something is missing, ask the user before installing anything.** Installing a TeX distribution is a gigabyte-scale, system-level change, and users reasonably have opinions about it. State what's missing, what you'd install and from where, and wait for a yes. Use official channels only:
+
+| Tool | Windows | macOS | Linux (Debian/Ubuntu) |
+|---|---|---|---|
+| XeLaTeX + ctex | MiKTeX from miktex.org, or `winget install MiKTeX.MiKTeX` (includes poppler tools; keep "install packages on the fly" on) | MacTeX from tug.org/mactex, or `brew install --cask mactex-no-gui` | `sudo apt install texlive-xetex texlive-lang-chinese` (or `texlive-full`) |
+| `pdftoppm` | included with MiKTeX | `brew install poppler` | `sudo apt install poppler-utils` |
+| Python 3 | python.org installer, or `winget install Python.Python.3.12` | python.org or `brew install python@3.12` | usually preinstalled |
+
+Re-run the detection after installing to confirm, and mention what was installed in your final report. If the user declines installation, degrade gracefully: script and `.tex` source can still be delivered without compiled PDFs — say plainly what you could not verify.
+
 ## Phase 0 — Intake
 
 Four answers change everything downstream; get them from the user or infer them from context before writing:

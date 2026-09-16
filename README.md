@@ -82,6 +82,10 @@ paper-to-podium/
 
 Distilled from a real end-to-end project: a 30-minute Chinese course presentation of an economics paper — script, 23-page Beamer deck, institutional template, fact-check, blind review, print-ready annotated script — that went through ~15 rounds of user feedback. The references preserve what the feedback taught, including the failures (the phrases the speaker refused to say, the layouts that looked fine in LaTeX and bad on screen).
 
+## Acknowledgments
+
+This skill ships with the **SimplePlus** Beamer theme by [Pin-Yen Huang](https://github.com/pm25/SimplePlus-BeamerTheme) (bundled in `assets/simpleplus/`, released into the public domain under the Unlicense). Many thanks to the author — the decks this skill produces owe their look to his work. Thanks also to [Anthropic's skill-creator](https://github.com/anthropics/skills), whose methodology shaped how this skill is structured and tested.
+
 ## License
 
 MIT — see [LICENSE](LICENSE). The skeleton builds on SimplePlus (© Pin-Yen Huang, Unlicense/public domain, bundled in assets/simpleplus/); institutional themes you fetch from GitHub carry their own licenses.
@@ -171,6 +175,10 @@ paper-to-podium/
 ## 来源
 
 提炼自一个真实的完整项目：一场 30 分钟的中文课程论文汇报——讲稿、23 页 Beamer slides、学校模板、事实核查、盲评、打印版标注讲稿——历经约 15 轮用户反馈。references 里保存的是这些反馈教会我们的东西，包括失败的部分（汇报人拒绝念出口的句子、LaTeX 里好看投影上难看的版式）。
+
+## 致谢
+
+本 skill 内置了 **SimplePlus** Beamer 主题，作者 [Pin-Yen Huang](https://github.com/pm25/SimplePlus-BeamerTheme)（位于 `assets/simpleplus/`，以 Unlicense 发布至公有领域）。感谢作者——本 skill 产出的 slides 的外观来自他的工作。也感谢 [Anthropic 的 skill-creator](https://github.com/anthropics/skills)，其方法论塑造了本 skill 的结构与测试方式。
 
 ## 许可证
 
