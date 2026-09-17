@@ -20,7 +20,7 @@ If you start with slides, you end up with dense bullet pages that the speaker re
 2. **Write the script** — to a length budget derived from the time limit, in plain spoken language.
 3. **Distill the slides** — extract the load-bearing sentences and figures from the script; design for the back row.
 4. **Visual QA loop** — render every page to an image and look at it; fix what looks off. Repeat.
-5. **Verify** — a fact-check pass against paper and sources, then a blind review by a fresh "audience" that has only seen the slides.
+5. **Verify** — a fact-check pass against paper and sources, a language proofread of the script (typos propagate verbatim onto the slides), then a blind review by a fresh "audience" that has only seen the slides.
 6. **Stage materials** — align the script to slide pages with turn cues; produce a print-friendly script with slide-verbatim paragraphs marked.
 
 The phases are ordered by dependency, not by ceremony. If the user already has a script, jump in at phase 3. If they only want a deck review, run phases 4–5. The skill's job is to keep the script-first dependency straight, not to force every step.
@@ -66,6 +66,8 @@ Four answers change everything downstream; get them from the user or infer them 
 
 Read the whole paper, including appendix figures that look presentation-worthy. Then research what the paper takes for granted: for a policy paper, the policy's backstory, implementation timeline, sibling policies, and what happened afterward. Audiences reliably ask about exactly this material, and it is what turns a paper summary into a talk.
 
+(Tooling note: if you extract the paper's text with `pdftotext`, pass `-enc UTF-8` — some Windows/poppler builds default to Latin-1 output and silently mangle non-ASCII text.)
+
 One discipline matters here: **every number that will be said aloud must be traceable.** Keep a running source list that separates two kinds of claims — paper-internal claims (cite the table/figure/footnote: "Table 3, column 2") and external facts (cite the document or outlet). You will need this list twice later: for the fact-check pass, and when the audience asks "where does that number come from?"
 
 ## Phases 2–6
@@ -80,6 +82,6 @@ Read the three reference files as you reach each phase. Two habits cut across al
 
 - A script whose spoken length, at the speaker's actual pace, lands inside the time budget with margin for questions.
 - Slides where every page passes a visual check: readable from the back, one idea per page, no orphaned two-word pages, no walls of text, and the paper's 2–4 argument-carrying figures are on figure pages (see `references/slide-craft.md` on identifying them).
-- A fact-check that found no material errors, with sources on file for the numbers.
+- A fact-check that found no material errors, with sources on file for the numbers, and a language proofread that ran after the script stabilized.
 - A blind reviewer (fresh context, saw only the slides) who could follow the talk's logic without the paper.
 - A print-ready script with page-turn cues matching the final deck's page numbers, and slide-verbatim paragraphs visibly marked.

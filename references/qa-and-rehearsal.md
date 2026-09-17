@@ -13,6 +13,16 @@ The user asked for "no big factual errors; small imprecision is fine." That is t
 
 Fix the script *and* flag any place where the same error lives in the slides — they are separate artifacts and drift apart silently.
 
+## The proofread pass (language, not facts)
+
+Fact-checking catches wrong numbers; it does not catch wrong characters. After the script stabilizes, do one separate read purely for language — or hand the script to a fresh reader for exactly this. What to look for:
+
+- Typos and dropped characters. In Chinese scripts: a missing 的/了, homophone swaps, doubled words (a real one that shipped: "项目最初的目很朴素" — missing 的). In English: duplicated words ("the the"), agreement slips.
+- Redundant hedges the speaker will trip on ("大约有上百名" — pick one).
+- Any sentence you stumble over while reading silently; the speaker will stumble on it at the podium.
+
+This pass earns its keep because the deck *quotes* the script: a typo in the script is a typo on the projector, copied verbatim onto a slide. Fix the script first, then re-sync every slide that quotes the paragraph, and regenerate the print PDF.
+
 ## The blind-audience review
 
 The strongest cheap test of a deck: give it to a reader with zero context. Spawn a fresh subagent (or ask a colleague) whose entire knowledge of the talk is the slides PDF. Tell them only the occasion ("this is a course literature presentation") and ask them to report: what they think the talk is about, where they got lost, which pages they'd skip, what questions they'd ask at the end.

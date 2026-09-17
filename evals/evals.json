@@ -18,6 +18,12 @@
       "prompt": "Help me turn this paper into a 20-minute journal club presentation. Mostly PhD students in the room, keep it informal but accurate, and I want figures from the paper in the deck.",
       "expected_output": "Script-first workflow; extracts presentation-worthy paper figures at high resolution (no regression-table screenshots); uses the key-points page / figure page split; ends with fact-check and blind-audience review.",
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "讲稿和 slides 都改完了，帮我做最后检查，然后出一份能打印出来带上讲台的讲稿。",
+      "expected_output": "Runs the fact-check against paper and sources, then a separate language proofread of the script (knowing typos propagate verbatim onto the slides and fixing both artifacts), then the blind-audience review; aligns page-turn markers to the frozen deck; produces the print-ready PDF and explains its markup conventions in one sentence.",
+      "files": []
     }
   ]
 }

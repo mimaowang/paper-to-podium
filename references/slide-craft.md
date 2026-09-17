@@ -13,6 +13,10 @@ Two failure modes sit on either side, and both are real:
 
 Page count is free. Never crowd a page to save a page.
 
+## Slide text inherits the script's voice
+
+The plain-language rules from `script-writing.md` apply to everything on the slides too, not just to what is spoken. Titles and bullets state; they don't tease. "不能直接用平均国家做对照" over "为什么不能直接比"平均国家"?". In one field test the script was cleaned of rhetorical questions while three of them quietly survived as slide titles and bullets — and a rhetorical question on screen is worse than a spoken one, because it stays up for two minutes. A genuine question the talk then answers can orient a page; a question that exists only for suspense gets rewritten as a statement.
+
 ## Typography for the back row
 
 Defaults this workflow converged on after several rounds of "make it bigger / now slightly smaller":
@@ -65,6 +69,8 @@ If the user has an institutional template, use it. Otherwise:
 ## The closing slide
 
 "谢谢大家，欢迎批评指正！" / "Thank you — questions welcome" gets **its own final frame**, never shares the summary page. The summary page is content; the closing page is the speaker's cue to stop talking and invite questions — merging them means the "any questions?" moment happens over a wall of bullet points. One line, centered, nothing else on the page.
+
+One beamer trap, hit in practice: sparse frames are vertically centered by default, so `\vfill` does not stretch and elements you tried to push apart float in a cluster. On sparse pages (the closing page, a figure-plus-caption page), position things with explicit spacing — `\\[2em]`, `\vspace{...}` — not with `\vfill`.
 
 ## The visual QA loop
 
